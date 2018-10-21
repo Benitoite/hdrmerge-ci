@@ -2,7 +2,7 @@
 
 brew cask uninstall oclint
 brew reinstall little-cms2 fftw curl zlib exiv2 libraw || exit 1
-brew install --verbose --with-toolchain llvm@3.9
+brew install --verbose --with-toolchain llvm
 
 #HASH=9ba3d6ef8891e5c15dbdc9333f857b13711d4e97 #qt@5.5
 #QTPREFIX="qt@5.5"
@@ -13,7 +13,7 @@ QTPREFIX="qt"
   cat Formula/${QTPREFIX}.rb | sed -e 's|depends_on :mysql|depends_on "mysql-client"|g' | sed -e 's|depends_on :postgresql|depends_on "postgresql"|g' > /tmp/${QTPREFIX}.rb && cp /tmp/${QTPREFIX}.rb Formula/${QTPREFIX}.rb &&
   brew install ${QTPREFIX} && brew link --force ${QTPREFIX}) || exit 1
 
-export PATH="/usr/local/opt/llvm@3.9/bin:/usr/local/opt/curl/bin:/usr/local/opt/zlib/bin:/usr/local/opt/${QTPREFIX}/bin:$PATH"
+export PATH="/usr/local/opt/llvm/bin:/usr/local/opt/curl/bin:/usr/local/opt/zlib/bin:/usr/local/opt/${QTPREFIX}/bin:$PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:/usr/local/opt/${QTPREFIX}/lib/pkgconfig:$PKG_CONFIG_PATH"
 export LD_LIBRARY_PATH="/usr/local/opt/curl/lib:/usr/local/opt/zlib/lib:/usr/local/opt/${QTPREFIX}/lib:$LD_LIBRARY_PATH"
 
@@ -33,7 +33,7 @@ pwd
 curl -L http://www.alglib.net/translator/re/alglib-3.14.0.cpp.gpl.tgz -O || exit 1
 tar xf alglib-3.14.0.cpp.gpl.tgz || exit 1
 export ALGLIB_ROOT=$(pwd)/cpp
-cmake -DCMAKE_C_COMPILER=clang-mp-3.9 -DCMAKE_CXX_COMPILER=clang++-mp-3.9 -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_SYSROOT="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk" -DCMAKE_INSTALL_PREFIX=/usr/local -DALGLIB_ROOT=$ALGLIB_ROOT -DALGLIB_INCLUDES=$ALGLIB_ROOT/src -DALGLIB_LIBRARIES=$ALGLIB_ROOT/src -DCMAKE_INSTALL_BINDIR=$(pwd)/install .. || exit 1
+cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_SYSROOT="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk" -DCMAKE_INSTALL_PREFIX=/usr/local -DALGLIB_ROOT=$ALGLIB_ROOT -DALGLIB_INCLUDES=$ALGLIB_ROOT/src -DALGLIB_LIBRARIES=$ALGLIB_ROOT/src -DCMAKE_INSTALL_BINDIR=$(pwd)/install .. || exit 1
 make -j2 install || exit 1
 
 mkdir install/hdrmerge.app/Contents/Frameworks
