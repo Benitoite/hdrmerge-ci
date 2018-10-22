@@ -18,6 +18,9 @@ addons:
       - wget
       - curl
 
+before_install:
+    - brew update
+  
 before_script:
     #- echo "SLUG: $TRAVIS_REPO_SLUG"
     - git clone https://github.com/jcelaya/hdrmerge.git
