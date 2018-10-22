@@ -21,7 +21,7 @@ brew reinstall little-cms2 fftw curl exiv2 libraw || exit 1
 #brew install qt@5.5
 
 export PATH="/usr/local/opt/curl/bin:/usr/local/opt/zlib/bin:/usr/local/opt/${QTPREFIX}/bin:$PATH"
-export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:/usr/local/opt/${QTPREFIX}/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig:/usr/local/opt/curl/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:/usr/local/opt/${QTPREFIX}/lib/pkgconfig:$PKG_CONFIG_PATH"
 export LD_LIBRARY_PATH="/usr/local/opt/curl/lib:/usr/local/opt/zlib/lib:/usr/local/opt/${QTPREFIX}/lib:$LD_LIBRARY_PATH"
 
 mkdir -p hdrmerge/build || exit 1
