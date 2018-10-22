@@ -2,6 +2,8 @@
 
 brew install libomp
 brew install zlib
+brew install qt@5.5
+
 
 #brew cask uninstall oclint
 
@@ -16,7 +18,7 @@ brew reinstall little-cms2 fftw curl exiv2 libraw || exit 1
 #  cat Formula/${QTPREFIX}.rb | sed -e 's|depends_on :mysql|depends_on "mysql-client"|g' | sed -e 's|depends_on :postgresql|depends_on "postgresql"|g' > /tmp/${QTPREFIX}.rb && cp /tmp/${QTPREFIX}.rb Formula/${QTPREFIX}.rb &&
 #  brew install ${QTPREFIX} && brew link --force ${QTPREFIX}) || exit 1
 
-brew install qt@5.5
+#brew install qt@5.5
 
 export PATH="/usr/local/opt/curl/bin:/usr/local/opt/zlib/bin:/usr/local/opt/${QTPREFIX}/bin:$PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:/usr/local/opt/${QTPREFIX}/lib/pkgconfig:$PKG_CONFIG_PATH"
