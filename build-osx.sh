@@ -2,11 +2,7 @@
 
 brew cask uninstall oclint
 
-brew reinstall little-cms2 fftw curl exiv2 libraw || exit 1
-
-brew install libomp || exit 1
-
-brew install zlib
+brew reinstall little-cms2 fftw curl exiv2 libraw libomp zlib || exit 1
 
 #HASH=9ba3d6ef8891e5c15dbdc9333f857b13711d4e97 #qt@5.5
 #QTPREFIX="qt@5.5"
