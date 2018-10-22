@@ -2,7 +2,7 @@
 
 brew install libomp
 brew install zlib
-brew install qt@5.5
+brew install qt
 
 
 #brew cask uninstall oclint
