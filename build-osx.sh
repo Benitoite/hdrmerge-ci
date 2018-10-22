@@ -1,8 +1,9 @@
 #! /bin/bash
 
-brew install libomp zlib
+brew install libomp
+brew install zlib
 
-brew cask uninstall oclint
+#brew cask uninstall oclint
 
 brew reinstall little-cms2 fftw curl exiv2 libraw || exit 1
 
