@@ -2,7 +2,7 @@
 
 brew cask uninstall oclint
 brew reinstall little-cms2 fftw curl zlib exiv2 libraw || exit 1
-brew install --verbose --with-toolchain
+brew cask install macports
 
 #HASH=9ba3d6ef8891e5c15dbdc9333f857b13711d4e97 #qt@5.5
 #QTPREFIX="qt@5.5"
