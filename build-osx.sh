@@ -36,7 +36,7 @@ cd hdrmerge/build || exit 1
 	./configure --prefix=/usr/local || exit 1
 	make -j2 install || exit 1
 	cd ..
-fi
+#fi
 pwd
 curl -L http://www.alglib.net/translator/re/alglib-3.14.0.cpp.gpl.tgz -O || exit 1
 tar xf alglib-3.14.0.cpp.gpl.tgz || exit 1
