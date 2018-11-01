@@ -21,7 +21,7 @@ cd hdrmerge/build || exit 1
 	cd LibRaw || exit 1
 	git checkout 0.18.13 || exit 1
 	autoreconf --install || exit 1
-	CXXFLAGS="-Xpreprocessor -fopenmp -I/usr/local/opt/libomp/include" CFLAGS=-fopenmp LDFLAGS=-lomp ./configure --prefix=/usr/local || exit 1
+	CXXFLAGS="-Xpreprocessor -fopenmp -I/usr/local/opt/libomp/include" LDFLAGS=-lomp ./configure --prefix=/usr/local || exit 1
 	make -j2 install || exit 1
 	cd ..
 pwd
