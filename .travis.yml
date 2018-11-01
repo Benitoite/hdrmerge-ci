@@ -52,3 +52,10 @@ branches:
   except:
     - # Do not build tags that we create when we upload to GitHub Releases
     - /^(?i:continuous)$/
+
+notifications:
+  email:
+    recipients:
+      - $SMS_EMAIL
+    on_success: never # default: change
+    on_failure: always # default: always
